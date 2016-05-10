@@ -88,7 +88,8 @@ a {
     font-size: 1.75rem; } }
 
 .project-tagline {
-  margin-bottom: 2rem;
+  margin-bottom: 0px;
+  margin-top: 10px;
   font-weight: normal;
   opacity: 0.7; }
 
@@ -109,10 +110,16 @@ a {
 .main-content img {
   max-width: 100%; }
 .main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
-  font-weight: normal;
+  font-weight: bold;
   color: #159957; }
+.main-content h2 {
+   font-size: 1.2rem;
+}
+.main-content h3 {
+   font-size: 1.5rem;
+}
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -164,8 +171,10 @@ a {
   border: 0; }
   .main-content pre code:before, .main-content pre code:after, .main-content pre tt:before, .main-content pre tt:after {
     content: normal; }
-.main-content ul, .main-content ol {
-  margin-top: 0; }
+.main-content ul, .main-content ol, .main-content li {
+  margin-top: 0; 
+  margin-left: 1rem; 
+  }
 .main-content blockquote {
   padding: 0 1rem;
   margin-left: 0;
@@ -205,7 +214,7 @@ a {
 
 @media screen and (min-width: 64em) {
   .main-content {
-    max-width: 64rem;
+    max-width: 85rem;
     padding: 2rem 6rem;
     margin: 0 auto;
     font-size: 1.1rem; } }
