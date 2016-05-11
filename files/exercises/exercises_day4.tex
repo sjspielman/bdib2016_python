@@ -1,0 +1,117 @@
+\documentclass{article}[12pt]
+\usepackage[margin=0.75in]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+%\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage[T1]{fontenc} % quotes
+%\hypersetup{
+%	colorlinks=true, %set true if you want colored links
+%	linktoc=all,     %set to all if you want both sections and subsections linked
+%	linkcolor=blue,  %choose some color if you want links to stand out
+%	urlcolor=blue
+%}
+\newcommand{\code}[1]{\texttt{#1}}  % let's not use bold for now
+\sloppypar
+\setlength\parindent{0pt}
+\usepackage{textcomp}
+
+\begin{document}
+
+\title{Introduction to Python \\ Day Four Exercises}
+\author{Stephanie Spielman \\ \footnotesize{Email: stephanie.spielman@gmail.com}}
+\date{}
+\maketitle{}
+
+
+All exercises in this worksheet \textbf{must} be completed in Python scripts, and then run from the UNIX command-line with \code{python name\_of\_script.py}. Be sure to avoid spaces in file names!!
+
+\section{Interacting with files}
+
+\textbf{Be sure to always close the file once you are done with it! If you use \code{with} control flow, python will close the file automatically.}
+
+\begin{enumerate}[itemsep=5ex]
+	
+	\item Open the file "file1.txt" in read-mode, and print its contents to screen. For this, you should use the \code{.read()} method, which saves the contents of the file to a single string. Perform this task twice: once using \code{open} and \code{close}, and once using \code{with} control-flow.
+	
+	\item Open the file "file1.txt" in read-mode, and save all lines in this file to a list using the \code{.readlines()} method. Write a new file called "upper\_file1.txt" which contains the same contents of "file1.txt" but in upper-case. Try to do this task using a single for-loop, and don't forget that in order to write newlines (the "enter" key) to a file, you must include \code{"\textbackslash n"} in the string you are writing to file!
+	
+	\item Open the file "upper\_file1.txt" in append-mode, and \emph{append} the sentence: "I just created this upper-case file!" to the bottom of the file. 
+	
+	\item Open the file "flu\_sequences.fasta" in read-mode, and save the contents of a file as a single string using the \code{.read()} method (be sure to close the file, or use \code{with} control-flow!). Address the following questions using Python:
+	
+	\begin{enumerate}[itemsep=2ex]
+		\item How many \emph{characters} are in this file? Remember that \code{.read()} saves the entire file as a single string!
+		\item How many \emph{lines} are in this file? (Hint: use the \code{.split()} method as part of the solution).
+		\item Use a for-loop to print the first 10 lines of the file.
+		\item Open and read the file again, except this time, use the \code{.readlines()} method instead of \code{.read()}. Perform the same three tasks. (Hint: to count the characters, loop over the line list and keep a running counter of the length of each line.)
+	\end{enumerate}
+\end{enumerate}
+
+\section{Python modules}
+\begin{enumerate}
+	
+	\item For this question, you will use the \code{os} module. In the included zip directory, there are 20 text files named file1.txt, file2.txt, file3.txt,..., file20.txt (below, they are referred to as file<1-20.txt> for convenience). For this question, use python to count the number of lines in each file. You will save all file line-counts to a \code{dictionary}, in which the keys are the file names and the values are the line counts. Once you have created the dictionary, print it to screen to make sure it looks correct.
+	\\ Hint: Use the \code{os} module function \code{os.listdir} to list all files in the current directory and loop over all of these files in order to count their lines. To ensure that you are only counting lines in these text files, use the \code{.startswith()} and \code{.endswith()} method (all files start with "file" and all files end with ".txt").
+
+	\item Create a new file called "file\_full.txt" which contains all contents from each file<1-20>.txt (in order). Again, use \code{os.listdir} to loop over these files. Once this file has been created, use the \code{shutil} module to \emph{move} the file to a different directory on your computer. After this script has run, navigate in your terminal (using the UNIX command \code{cd}) to this directory to confirm that "file\_full.txt" is indeed there.
+
+	\item  Write a \code{function} which counts the number of times a given letter occurs in a file. The function should take two arguments: the file name (including its path) and the letter to count. The function should return the number of occurrences for that letter. \\Hint: In this function, you should open the file, read it using the \code{.read()} method, and then use the \code{.count()} method to count the number of times the letter appears. Perform the following tasks with this function:
+	
+	\begin{itemize}
+		\item Run this function on all file<1-20.txt> to count the letter "a". For every file which contains more than 100 a's, use the \code{shutil} to \emph{make a copy of this file} called "lots\_fileX.txt". For example, if file10.txt contains more than 100 a's, you should create a second file called "lots\_file10.txt". 
+		\item Use the \code{sys} module (specifically the \code{sys.argv} variable) to capture \emph{two command-line arguments}: a file on which to run this function and the letter to count. Run the function using the given input parameters, and print a a sentence to the screen summarizing the results.
+		\item Modify your code from the previous point to use the \code{os} module function \code{os.path.exists()}. This function takes a single argument, a path to a file/directory, and returns True or False indicating if the file exists or not. So, before running the function on the command-line provided file, check if the file exists using \code{os.path.exists()}. If the file exists, then proceed as usual. If the file does not exist, print to screen "Your file does not exist!", and then exit immediately with \code{sys.exit()}.
+		\item Now, run the function \emph{from an entirely separate script}. Accomplish this by importing the file with this function into the script you will run. You can run the function on a file of your choice.
+	\end{itemize}
+
+
+\end{enumerate}
+
+
+\section*{Bonus Question!}	
+	
+	For this question, you are going to save some useful information to a file. Specifically, you will create a \emph{CSV} (comma-separated values) file. This is basically what Excel files are - files with columns of data. The top row is the header, and each subsequent row contains data. Columns of data are separated by commas in csv files (note that there are other types of \emph{delimited} files, like tab-delimited files). 
+	\\\\ You will use the data from the file "dopamine\_sequences.fasta," which contains DNA sequences of vertebrate dopamine receptors published in \citet{SpielmanKumarWilke2015}. For convenience, the separate file "dopamine\_sequences\_dictionary.txt" contains a Python dictionary of these sequences; the keys are sequences IDs, and the values are the sequences. You can copy and paste the contents of "dopamine\_sequences\_dictionary.txt" into the Python script you\textquotesingle ll write for this question.
+	\\\\ Now, create a CSV file with two columns: the sequence ID and the sequence length. Follow this general strategy:
+	\begin{enumerate}[itemsep=2ex]
+		\item Collect all information to write to the output file (this has been done for you in the dictionary!)
+		\item Open the output file and write a header to the file (remember to add \code{"\textbackslash n"} for newlines!)
+		\item Write each line to the output file. In this case, you will need to loop over the dictionary and write each key:value pair in CSV format with a newline character, e.g. "sequenceID,length\textbackslash n"
+	\end{enumerate}
+	Once you have written the file, open it in a text editor to be sure that it is correct.
+	
+	Now, modify this code in the following ways:
+	\begin{enumerate}[itemsep=2ex]
+		
+		\item Modify your CSV-writing code such that it uses a function to write the CSV. This function should take three arguments: the header string, the dictionary to write, and the output file name. The function does not need to return anything.
+		
+		\item Modify your code and function so that you now write a file with three columns: sequence ID, sequence length, and percent of ambiguous nucleotides per DNA sequence. In this sequence, the character "N" is considered ambiguous (unlike A, C, G, T).
+		
+	\end{enumerate}
+
+	
+
+
+\bibliographystyle{plainnat}
+\bibliography{citations}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

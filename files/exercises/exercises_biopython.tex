@@ -1,0 +1,91 @@
+\documentclass{article}[12pt]
+\usepackage[margin=0.75in]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+%\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage[T1]{fontenc} % quotes
+%\hypersetup{
+%	colorlinks=true, %set true if you want colored links
+%	linktoc=all,     %set to all if you want both sections and subsections linked
+%	linkcolor=blue,  %choose some color if you want links to stand out
+%	urlcolor=blue
+%}
+\newcommand{\code}[1]{\texttt{#1}}  % let's not use bold for now
+\sloppypar
+\setlength\parindent{0pt}
+
+
+\begin{document}
+
+\title{Introduction to Python \\ BioPython Exercises}
+\author{Stephanie Spielman \\ \footnotesize{Email: stephanie.spielman@gmail.com}}
+\date{}
+\maketitle{}
+
+\section*{Working Sequence Data in BioPython}
+
+
+\begin{enumerate}[itemsep=5ex]
+
+	\item The first exercise will focus on manipulating sequences in the file "dopamine\_sequences.fasta". Perform the following tasks:
+	
+	\begin{enumerate}[itemsep=2ex]
+		\item Use the SeqIO module to read and save records from the file "dopamine\_sequences.fasta".
+		\item Determine the length for each sequence, and save this information to a dictionary. The keys should be the sequence ID, and the values should be the length.
+		\item Translate each sequence to amino acids, and count the number of tryptophans (coded as "W") per sequence. Again, save this information in a dictionary. (Hint: BioPython has implemented certain useful string methods, like \code{.count()} for \code{Seq} object sequences.)
+		\item Re-do parts (b) and (c) by writing \emph{functions} to count the sequence length and determine the number of tryptophans. Each function should take a \emph{single} \code{SeqRecord} object as the argument.
+		
+		
+	\end{enumerate}
+	
+	\item The first exercise will focus on manipulating sequences in the sequence alignment file "dopamine\_alignment.fasta", from \citet{SpielmanKumarWilke2015}. This file contains the same sequences as does "dopamine\_sequences.fasta", except the sequences are aligned and in amino-acid space. Perform the following tasks:
+		
+	\begin{enumerate}[itemsep=2ex]
+		\item Use the SeqIO module to read and save records from the file "dopamine\_alignment.fasta".
+		\item Translate each records to amino-acids. These sequences are known to have a motif "NPxxY", where the "xx" pair is either "II", "VV", or "VI", towards the end of their sequence. In this alignment, this motif appears at positions 745 - 750 (although remember that Python indexing starts at 0!). Determine how many sequences have each motif, and then print your results to screen (e.g. \# sequences have NPIIY, \# sequences have NPVIY, and \# sequences have NPVVY). Make sure that the total number of motifs you count equals the number of sequences in the file (you should code this, not manually/visually check it).
+		\item Save these sequences to a new file, called "dopamine\_alignment.phy" in phylip format. Perform this step twice, once using the \code{.convert()} method and once using the \code{.write()} method.
+			
+		\end{enumerate}
+
+\end{enumerate}
+
+\section*{Scripting}
+
+\begin{enumerate}
+	\item Write a complete python script which determines the average GC-content across all sequences in a given file. Your script should use the \code{sys} module (specifically, the \code{sys.argv} variable) to obtain the file name, as a command line argument. Your script should include two functions: a function which reads in a sequence file, and a function which computes the GC-content for a single sequence.
+	
+	\item Write a complete python script which determines the pairwise distance between the first two sequences in a provided \emph{sequence alignment} file. Your script should use the \code{sys} module (specifically, the \code{sys.argv} variable) to obtain the file name, as a command line argument. our script should include two functions: a function which reads in a sequence alignment file, and a function which computes pair-wise distance.
+
+	
+\end{enumerate}
+	
+
+	
+
+
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{citations}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

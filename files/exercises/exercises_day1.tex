@@ -1,0 +1,140 @@
+\documentclass{article}[12pt]
+\usepackage[margin=0.75in]{geometry}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc} % quotes
+\hypersetup{
+	colorlinks=true, %set true if you want colored links
+	linktoc=all,     %set to all if you want both sections and subsections linked
+	linkcolor=blue,  %choose some color if you want links to stand out
+	urlcolor=blue
+}
+\newcommand{\code}[1]{\texttt{#1}}  % let's not use bold for now
+
+\begin{document}
+
+\title{Introduction to Python \\ Day One Exercises}
+\author{Stephanie Spielman \\ \footnotesize{Email: stephanie.spielman@gmail.com}}
+\date{}
+\maketitle{}
+
+\section{UNIX Exercises}
+
+\begin{enumerate}[itemsep=5ex]
+	\item Launch a Terminal session and navigate to your home directory with the \code{cd} command. Remember, there are three ways to do this:
+		\begin{Verbatim}[fontsize=\small,xleftmargin=-2.5cm,commandchars=+\[\]]
+		cd
+		cd ~
+		cd /path/to/home/directory/ # replace your home directory's full path
+		\end{Verbatim}
+		Using the commands \code{cd}, \code{pwd}, and \code{ls} (and \code{ls -la}), examine the directory structure of your system. Spend a few minutes (no more than 5!!!) figuring out where different files and directories are located so that you understand your file system organization by navigating forward into sub-directories and back into parent directories and listing contents. \emph{The purpose of this task is to become comfortable with your computer's organization.}
+	
+	\item Navigate to your home directory, and perform the following tasks. After performing a task that copies, moves, or removes a file/directory, enter the command \code{ls} to see how things have changed.
+	\begin{enumerate}[itemsep=2ex]
+		\item Use the command \code{mkdir} to create a new directory called "blob".
+		
+		\item Use the command \code{touch} to create a new file called "blerg.txt".
+		
+		\item Use the command \code{echo} along with the symbol \code{>} to add the sentence "I'm writing to a file!" to blerg.txt.
+		
+		\item Use the command \code{mv} to move this file into the directory blob. Then, enter \code{ls}. What do you notice?
+		
+		\item Navigate into the directory "blob". Make a copy of blerg.txt called "blerg2.txt".
+		
+		\item Use the command \code{echo} and the symbol \code{>} to write the line "Another sentence!" to blerg2.txt. Now use \code{less} to examine the contents of blerg2.txt. What do you notice?
+		
+		\item Make a new copy of the file blerg.txt using the command \code{cp}, called blerg3.txt. Enter \code{ls}. What files now exist in this directory?
+		
+		\item \emph{Append} the line "Another sentence!" to blerg3.txt using \code{echo} and the symbol \code{>>}. 
+		
+		\item Navigate back to your home directory (try using the code \code{cd ..} for this), and use the command \code{rm -r} to delete the blob directory.	
+	
+		\item Use the \code{rm} command to delete the file blerg.txt.
+	\end{enumerate} 
+	
+%	\item Perform the following tasks:
+%		\begin{enumerate}[itemsep=2ex]
+%			\item Use the command \code{touch} to create a file "gobble.txt". Create these files in a single line of code, as in, only use \code{touch} once!
+%			
+%			\item Use \code{echo} and \code{>} to add the line "The turkey goes gobble gobble gobble." to the file gobble.txt, and confirm that this line was correctly added using \code{less}.
+%			
+%			\item Use the command \code{cat} to add the contents of gobble.txt to a new file called "turkey.txt". Again, use \code{less} to be sure that turkey.txt contains this sentence.		
+%		\end{enumerate}
+	
+	
+	\item For this exercise, you will use the included file "flu\_sequences.fasta". This file contains sequences from the Influenza virus PB2 gene. You can open this file in a text editor, or use \code{less}, to see its contents. Navigate to the directory where this file is located, and perform the following tasks:
+	\begin{enumerate}[itemsep=2ex]
+		\item The UNIX command \code{wc} stands for "word count". This command counts the number of lines, words, and bytes in a given file. Enter the command \code{wc flu\_sequences.fasta} to display this information. Compare the result with the file size as displayed by \code{ls -lh}. Do you see any overlapping numbers?
+		
+		\item Use \code{wc} with the argument \code{-l} to determine just the number of lines in sequences.fasta.
+		
+		\item Enter the command \code{head flu\_sequences.fasta} to view the top few 10 lines of this file. Consult the documentation for \code{head} using the command \code{man head}, and figure out how to specify a different number of lines. Enter \code{q} to exit from the man documentation, and use your new knowledge to display the first 16 lines of the file.
+		 
+		\item Create a new file called "lastseqs.fasta" which contains the \emph{last} 8 lines of flu\_sequences.fasta (hint: the command \code{tail}, which is basically the opposite of \code{head} should be useful!). For this task, \emph{do not use} \code{touch}.
+	\end{enumerate}
+\end{enumerate}
+			
+\vspace{2.25cm}
+
+\section{Python Variables Exercises}
+
+You can write Python code in two different ways: directly via the Python interpreter or via a script, which you can then call from the command line. To use the interpreter directly, simply type \code{python} into your command line. Directly interfacing with the Python interpreter is an excellent way to test out small pieces of code, but it is \emph{not a good way} to develop code. Using scripts, on the other hand, preserves your code in a text file (with the extension .py) so that you always have your Python code saved and accessible.
+
+For these exercises, you can use either the interpreter or a script, although I strongly recommend that you save all code in a script (with lots of comments!) for future reference!!
+
+Most importantly, you should \emph{always print your results after every step you take}. Printing output is the only way to be sure your code has worked properly!
+
+\vspace{1.5cm}
+
+\subsection{Working with Lists}
+
+\begin{enumerate}[itemsep=5ex]
+	
+	\item Define a list variable called animals which contains the following six entries: "monkey", "giraffe", "shark", "caterpillar", "ctenophore", and "squid". Perform the following tasks on this variable:
+	\begin{enumerate}[itemsep=2ex]
+		
+		\item Use indexing to create a new list with just the items "monkey", "giraffe", and "shark".
+		\item Use negative indexing to extract "squid" from this list.
+		\item Use the list method \code{.append()} to add the animal "spider" to the end of the list. Use the \code{len} function to see the length of the animals list after appending.
+		\item Use indexing to change the second entry in animals to "cat".
+		\item Use the list method \code{.pop()} to remove the 3rd entry from this list. 
+		\item Create a second list called plants which contains the entries "tree", "flower", "bush", and "grass". Next, create another list called organisms, in which the first entry is the animals list and the second entry is the plants list, using this code: \code{organisms = [plants, animals]}. You have just created a "list of lists", or a nested list. Use the \code{len()} function to determine the length of this new list. Is this what you expected or not?
+		\item Using indexing, replace the word "tree" in organisms with "redwood". 
+		\item Using indexing, extract the words "grass" and "caterpillar" from the organisms list in order to create this new list: \code{["grass", "caterpillar"]}. Bonus - for this question, try to incorporate the \code{.index()} list method.
+	\end{enumerate}
+
+	
+	
+\end{enumerate}
+
+\vspace{1.5cm}
+
+\subsection{Working with Strings}
+
+\begin{enumerate}[itemsep=5ex]
+	
+	\item Define two string variables, one with the value "hello" and the other with the value "goodbye". Using concatenation (the $+$ sign), create this new string: "helloGOODBYEHELLOgoodbye'' from the two variables defined. Print your result to be sure it is correct.
+
+	\item Create a string variable with the contents "abcdefg". From this variable, create a new string in which the "e" has been replaced with "X", i.e.\ "abcdXfg". Hint: use indexing and concatenation. Print a final statement that says: "My new string is abcdXfg."
+	
+	\item Define a string variable with the following value: "Hi, my name is Joe. I got a wife and three kids. I work in a button factory." Perform the following tasks on this variable:
+	\begin{enumerate}[itemsep=2ex]
+		
+		\item Extract the first 10 characters from the string.
+		\item Count of the number of occurrences of the letter "e" in the string.
+		\item Extract characters 8 - 14 from the string, and save this as a variable. Then, convert this new string to uppercase.
+		\item Convert this string into a list of lower-case words like this: \\ \code{["hi", "my", "name", "is", "joe", "i", "got", "a", "wife", "and", "three", "kids", "i", "work", "in", "a", "button", "factory"]}. For this task, you will need to use the \code{.split()} string method and indexing. Finally, use the \code{len()} function to determine how many words are in this new list.
+		
+	\end{enumerate}
+	
+
+	
+\end{enumerate}
+
+
+
+\end{document}
