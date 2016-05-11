@@ -1,0 +1,10 @@
+**/.DS_Store
+**/.RData
+**/.Rhistory
+**/*.pyc
+**/*.bbl
+**/*.log
+**/*.blg
+**/*.aux
+**/*.synctex.gz
+_site/
