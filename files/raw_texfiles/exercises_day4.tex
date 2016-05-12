@@ -26,31 +26,6 @@
 \date{}
 \maketitle{}
 
-
-All exercises in this worksheet \textbf{must} be completed in Python scripts, and then run from the UNIX command-line with \code{python name\_of\_script.py}. Be sure to avoid spaces in file names!!
-
-\section{Interacting with files}
-
-\textbf{Be sure to always close the file once you are done with it! If you use \code{with} control flow, python will close the file automatically.}
-
-\begin{enumerate}[itemsep=5ex]
-	
-	\item Open the file "file1.txt" in read-mode, and print its contents to screen. For this, you should use the \code{.read()} method, which saves the contents of the file to a single string. Perform this task twice: once using \code{open} and \code{close}, and once using \code{with} control-flow.
-	
-	\item Open the file "file1.txt" in read-mode, and save all lines in this file to a list using the \code{.readlines()} method. Write a new file called "upper\_file1.txt" which contains the same contents of "file1.txt" but in upper-case. Try to do this task using a single for-loop, and don't forget that in order to write newlines (the "enter" key) to a file, you must include \code{"\textbackslash n"} in the string you are writing to file!
-	
-	\item Open the file "upper\_file1.txt" in append-mode, and \emph{append} the sentence: "I just created this upper-case file!" to the bottom of the file. 
-	
-	\item Open the file "flu\_sequences.fasta" in read-mode, and save the contents of a file as a single string using the \code{.read()} method (be sure to close the file, or use \code{with} control-flow!). Address the following questions using Python:
-	
-	\begin{enumerate}[itemsep=2ex]
-		\item How many \emph{characters} are in this file? Remember that \code{.read()} saves the entire file as a single string!
-		\item How many \emph{lines} are in this file? (Hint: use the \code{.split()} method as part of the solution).
-		\item Use a for-loop to print the first 10 lines of the file.
-		\item Open and read the file again, except this time, use the \code{.readlines()} method instead of \code{.read()}. Perform the same three tasks. (Hint: to count the characters, loop over the line list and keep a running counter of the length of each line.)
-	\end{enumerate}
-\end{enumerate}
-
 \section{Python modules}
 \begin{enumerate}
 	
