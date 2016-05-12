@@ -6,5 +6,6 @@
 **/*.log
 **/*.blg
 **/*.aux
+**/*.out
 **/*.synctex.gz
 _site/

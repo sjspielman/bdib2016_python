@@ -39,7 +39,7 @@ First, define the following variables:
 
 \begin{enumerate}
 
-    \item Loop over the list "numbers". At each iteration, print the value in "numbers" plus 2. Your code should print out the following:\\
+    \item Write a for-loop over the list "numbers". At each iteration, print the value in "numbers" plus 2. Your code should print out the following:\\
         2 \\ 
         3 \\
         3 \\
@@ -48,7 +48,7 @@ First, define the following variables:
         7 \\
         10 \\
         15 \\
-    \item Loop over the list "animals". At each iteration, print out the value in "animals" followed by its length. Your code should print out the following:\\
+    \item Write a for-loop over the list "animals". At each iteration, print out the value in "animals" followed by its length. Your code should print out the following:\\
         gorilla 7 \\
         canary 6  \\
         frog 4    \\
@@ -61,9 +61,16 @@ First, define the following variables:
         MOTH     \\
         NEMATODE  \\
     \item Write a new for-loop to create a new list called "cap\_animals" which should contain the capitalized versions of all entries in "animals." For this task, you will need to define the list "cap\_animals" before the for-loop, and use \code{.append()} to build up this list as you go. Print the final list after the for-loop.
+    
     \item Write a for-loop to create a new list called "negative\_numbers" which should contain the negative values of the entries in "numbers", following a similar procedure to the previous task. Once this list is complete, write an \code{if/else} statement to check if the sum of "negative\_numbers" equals -1 times the number of "numbers". Use the function \code{sum()} in the if statement. Print informative messages in the \code{if/else} construct.
+	
 	\item Write a for-loop, using the \code{range()} function, to print the powers of 2 from 2$^0$ to 2$^{15}$. (Note that in Python, the exponent symbol is **, as in \code{3**2 = 9}).
 	
+	\item Modify the previous for-loop to print out \emph{every other} power of 2. Perform this task using two different approaches:
+	\begin{itemize}
+	    \item Modify the arguments given to \code{range()}
+	    \item Write an if-statement within the for-loop to check if the power should be printed (Hint: check if the \emph{iteration} count is even or odd).
+	\end{itemize}
 
 \end{enumerate}
 
