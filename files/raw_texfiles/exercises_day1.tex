@@ -92,41 +92,5 @@ First, define the following variables:
 \end{enumerate}
 
 
-\vspace{1.5cm}
-
-\subsection{Working with lists and strings}
-
-First, define the following variables: 
-	\begin{itemize}
-        \item \code{numbers = [0, 1, 1, 2, 3, 5, 8, 13]}
-        \item \code{mammal  = "orangutan"}
-        \item \code{bird    = "sparrow"}
-    \end{itemize}
-
-    \begin{enumerate}
-        \item Use indexing to print out the \emph{fourth} element of the list called "numbers". Now, use indexing to \emph{redefine} the fourth element of the list "numbers" to be -10. Print the list to check.
-    
-        \item Create a new variable called "original\_length" which contains the length of the list "numbers" (use the \code{len()} function for this!). Now,...
-        \begin{enumerate}
-            \item Use the method \code{.append()} to add the new entry "21" to the end of the list "numbers". 
-            \item Create another variable called "update\_length" which contains the length of "numbers" \emph{after} you have appended 21. 
-            \item Print the variables "original\_length" and "updated\_length". Make an \code{if/else} statement to check if "updated\_length" is one larger than "original\_length". Print "append worked!" if this condition is met, and "append failed" if not. Keep trying until you get "append worked"!
-        \end{enumerate}    
-        \item Write an \code{if/else} statement to check if the sum of the list "numbers" is below 50 (Hint: use the \code{sum()} function, which adds up all items in a list). Print informative statements accordingly. 
-    
-        \item Use the code \code{.count()} to count how many "a"'s are in the variable "mammal" (e.g. \code{"hello".count("l")} will return 2). Once you have this working, write an \code{if/elif/else} statement to check if the variable "mammal" or "bird" has more a's. Print informative statements accordingly.
-    
-        \item Use the \code{.upper()} to \emph{redefine} the variable "bird" as all uppercase. Print the updated variable to confirm.
-    
-        \item Create a new variable called "both\_animals" which contains the contents "SPARROWorangutan". Make sure to do this entirely with variable names (not with the actual words themselves!!). Now, use \code{.count()} to count how many lower-case "o"'s are in this string. Did you expect this answer? Why or why not?
-    
-        \item Using indexing, change the first entry of "numbers" to be the string contained in "both\_animals" (again, use only variable names for this! not the words!). Print to double check. 
-
-        \item Create a new list: \code{numbers2 = [-4, -8, -12, -16]}. Use negative indexing to change the final entry in "numbers" to be this "numbers2" list. This creates a \emph{nested list}. Print the final length of the list "numbers". Did you expect this? Why or why not?
-
-        \item Finally, determine the length of the final entry in "numbers" (Hint: you will need to use indexing and the \code{len()} function).
-    \end{enumerate}
-
-
 
 \end{document}

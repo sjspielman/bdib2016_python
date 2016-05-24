@@ -28,6 +28,40 @@
 \maketitle{}
 
 
+\section{Working with lists and strings}
+
+First, define the following variables: 
+	\begin{itemize}
+        \item \code{numbers = [0, 1, 1, 2, 3, 5, 8, 13]}
+        \item \code{mammal  = "orangutan"}
+        \item \code{bird    = "sparrow"}
+    \end{itemize}
+
+    \begin{enumerate}
+        \item Use indexing to print out the \emph{fourth} element of the list called "numbers". Now, use indexing to \emph{redefine} the fourth element of the list "numbers" to be -10. Print the list to check.
+    
+        \item Create a new variable called "original\_length" which contains the length of the list "numbers" (use the \code{len()} function for this!). Now,...
+        \begin{enumerate}
+            \item Use the method \code{.append()} to add the new entry "21" to the end of the list "numbers". 
+            \item Create another variable called "update\_length" which contains the length of "numbers" \emph{after} you have appended 21. 
+            \item Print the variables "original\_length" and "updated\_length". Make an \code{if/else} statement to check if "updated\_length" is one larger than "original\_length". Print "append worked!" if this condition is met, and "append failed" if not. Keep trying until you get "append worked"!
+        \end{enumerate}    
+        \item Write an \code{if/else} statement to check if the sum of the list "numbers" is below 50 (Hint: use the \code{sum()} function, which adds up all items in a list). Print informative statements accordingly. 
+    
+        \item Use the code \code{.count()} to count how many "a"'s are in the variable "mammal" (e.g. \code{"hello".count("l")} will return 2). Once you have this working, write an \code{if/elif/else} statement to check if the variable "mammal" or "bird" has more a's. Print informative statements accordingly.
+    
+        \item Use the \code{.upper()} to \emph{redefine} the variable "bird" as all uppercase. Print the updated variable to confirm.
+    
+        \item Create a new variable called "both\_animals" which contains the contents "SPARROWorangutan". Make sure to do this entirely with variable names (not with the actual words themselves!!). Now, use \code{.count()} to count how many lower-case "o"'s are in this string. Did you expect this answer? Why or why not?
+    
+        \item Using indexing, change the first entry of "numbers" to be the string contained in "both\_animals" (again, use only variable names for this! not the words!). Print to double check. 
+
+        \item Create a new list: \code{numbers2 = [-4, -8, -12, -16]}. Use negative indexing to change the final entry in "numbers" to be this "numbers2" list. This creates a \emph{nested list}. Print the final length of the list "numbers". Did you expect this? Why or why not?
+
+        \item Finally, determine the length of the final entry in "numbers" (Hint: you will need to use indexing and the \code{len()} function).
+    \end{enumerate}
+
+
 \section{For-loops}
 
 First, define the following variables: 
@@ -141,36 +175,6 @@ First, define the following variables:
 	\end{itemize}
 	
 \end{enumerate}
-
-\section{File Input and Output}
-
-\textbf{Be sure to always close the file once you are done with it! If you use \code{with} control flow, Python will close the file automatically.}
-The following exercises make use of files distributed in today's course materials. Be sure that you are in the correct directory when interacting with the files!
-
-\begin{enumerate}
-	
-	\item Open the file "file1.txt" in read-mode, and print its contents to screen. For this, you should use the \code{.read()} method, which saves the contents of the file to a single string. Perform this task twice: once using \code{open} and \code{close}, and once using \code{with} control-flow.
-	
-	\item Open the file "file1.txt" in read-mode, and save all lines in this file to a list using the \code{.readlines()} method. Write a new file called "upper\_file1.txt" which contains the same contents of "file1.txt" but in upper-case. Try to do this task using a single for-loop, and don't forget that in order to write newlines (the "enter" key) to a file, you must include \code{"\textbackslash n"} in the string you are writing to file!
-	
-	\item Open the file "upper\_file1.txt" in append-mode, and \emph{append} the sentence: "I just created this upper-case file!" to the bottom of the file. Close the file and open it (separately) to examine the contents. 
-	
-	\item Again, open the file "upper\_file1.txt", this time in read-mode. Loop over the file lines \emph{without} using \code{.read()} or \code{.readlines()}. Print out lines as you loop.
-	
-	\item Modify the previous for-loop to only print out lines in "upper\_file1.txt" which contain at least (i.e. $>=$) 5 letter "E"s. This will require an \code{if} statement as well as the method \code{.count()}.
-	
-	\item You should notice 20 files named file1.txt, file2.txt, ...file20.txt. Write a for-loop to open each of these files (Hint: use the \code{range()} function to loop over file names). For each file, write a for-loop over the file lines (this does not use \code{.read()} or \code{.readlines()}). Print each line that contains more than 25 characters (determine this with \code{len()}.)
-	
-	\item Using the zoo-keeper dictionaries from the \textbf{Working with dictionaries} exercises above, create and write to a new file called "animal\_food.txt" which contains the sentences you created earlier: \\
-        The lion eats meat \\
-        The gazelle eats grass \\ 
-        The anteater eats termites \\
-        The alligator eats visitors \\ 
-            ... etc. \\
-
-\end{enumerate}
-
-
 
 
 \end{document}
