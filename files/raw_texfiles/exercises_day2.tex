@@ -96,7 +96,7 @@ First, define the following variables:
         NEMATODE  \\
     \item Write a new for-loop to create a new list called "cap\_animals" which should contain the capitalized versions of all entries in "animals." For this task, you will need to define the list "cap\_animals" before the for-loop, and use \code{.append()} to build up this list as you go. Print the final list after the for-loop.
     
-    \item Write a for-loop to create a new list called "negative\_numbers" which should contain the negative values of the entries in "numbers", following a similar procedure to the previous task. Once this list is complete, write an \code{if/else} statement to check if the sum of "negative\_numbers" equals -1 times the number of "numbers". Use the function \code{sum()} in the if statement. Print informative messages in the \code{if/else} construct.
+    \item Write a for-loop to create a new list called "negative\_numbers" which should contain the negative values of the entries in "numbers", following a similar procedure to the previous task. Once this list is complete, write an \code{if/else} statement to check if the sum of "negative\_numbers" equals -1 times the sum of "numbers". Use the function \code{sum()} in the if statement. Print informative messages in the \code{if/else} construct.
 	
 	\item Write a for-loop, using the \code{range()} function, to print the powers of 2 from 2$^0$ to 2$^{15}$. (Note that in Python, the exponent symbol is **, as in \code{3**2 = 9}).
 	
@@ -115,7 +115,6 @@ First, define the following variables:
     \item Define this dictionary: \code{molecules = \{"DNA":"nucleotides", "protein":"amino acids", "hair":"keratin"\}}, and perform the following tasks:
     
     \begin{enumerate}
-        \item Create two lists called \code{molecules\_keys} and \code{molecules\_values}, comprised of the keys and values in \code{molecules}, respectively. Use dictionary methods for this task.
         \item Add the key:value pair \code{"ribosomes":"RNA"} to the \code{molecules} dictionary. Print the dictionary to confirm.
         \item Add yet another key:value pair, \code{"ribosomes":"rRNA"}, to the \code{molecules} dictionary, and print out the new dictionary. Understand why the result contains the key:value pairs shown.
     \end{enumerate}
@@ -141,40 +140,8 @@ First, define the following variables:
         The alligator eats visitors \\ 
             ... etc \\
         \noindent For this task, you should loop over the dictionary "category" and use indexing to obtain the relevant information from the "food" dictionary to create your sentence.
-        \\ Finally, modify the previous for-loop so that it creates a new dictionary called "animals\_eat" while looping over "category". This dictionary should contain the exact animal:food pairs, e.g. "lion": "meat" will be one key:value pair. Print out the resulting dictionary.
+        \item Finally, modify the previous for-loop so that it creates a new dictionary called "animals\_eat" while looping over "category". This dictionary should contain the exact animal:food pairs, e.g. "lion": "meat" will be one key:value pair. Print out the resulting dictionary.
     \end{enumerate}
 \end{enumerate}
-
-		   
-\section{For-loop and if/else}
-
-
-\begin{enumerate}
-	
-	\item A professor has decided to curve grades in a very special way: grades above 95 are reduced by 10\%, grades between 75-95 (inclusive) remain the same, and grades below 75 are raised by 10\%. You have been tasked with crunching the numbers.
-	
-	\begin{enumerate}
-		\item Create a list of new grades that reflects these rules from the following grade list: \\
-		\code{grades = [45, 94, 25, 68, 88, 95, 72, 79, 91, 82, 53, 66, 58]} 
-		
-		\item The professor has changed his mind: he now wants to use a scaling factor of 0.078325 (instead of 0.1), because why not! Recompute the grades from part 1 using this new scaling. 
-		 
-		\item Finally, modify your code (if you need to) so that the scaling value (either 0.1 or 0.078325) used in your for-loop is a \emph{pre-defined variable} to avoid hard-coding the scaling value.
-		
-		\item (Note: this question should be skipped if you are pressed for time!) The \emph{nested} list below contains three sets of grades for silly professor"s three class sections: \\ 
-		\code{all\_grades = [[45, 94, 25, 68, 88, 95, 72, 79, 91, 82, 53, 66, 58], [23, 46, 17, 67, 55, 42, 31, 73], [91, 83, 79, 76, 82, 91, 95, 77, 82, 77]]}
-		\\ Create a new nested list with the curved grades for each of these groups, using a scaling factor of 0.06.
-	\end{enumerate}
-	
-
-	\item This dictionary provides the molecular weight for all amino acids: \\ \code{ amino\_weights = \{"A":89.09, "R":174.20, "N":132.12, "D":133.10, "C":121.15, "Q":146.15, "E":147.13, "G":75.07, "H":155.16, "I":131.17, "L":131.17, "K":146.19, "M":149.21, "F":165.19, "P":115.13, "S":105.09, "T":119.12, "W":204.23, "Y":181.19, "V":117.15\}}. \\ Perform the following tasks with this dictionary (for ease, copy/paste it into a python script):
-	\begin{itemize}
-		\item Determine the molecular weight for this protein sequence: \\ \code{"GAHYADPLVKMPWRTHC"}.
-		\item This protein sequence, \code{"KLSJXXFOWXNNCPR"} contains some ambiguous amino acids, coded by "X" and "J". Calculate the molecular weight for this protein sequence. To compute a weight for an ambiguous amino acid "X" and "J", use the \emph{average} amino acid weight. \\ Hint: the \code{len()} and \code{sum()} functions and the \code{.values()} dictionary method will be useful! The \code{len()} and \code{sum()} functions can be used together to compute a mean value of a list.
-		
-	\end{itemize}
-	
-\end{enumerate}
-
 
 \end{document}

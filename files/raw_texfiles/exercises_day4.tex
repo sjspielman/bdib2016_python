@@ -26,6 +26,38 @@
 \date{}
 \maketitle{}
 
+
+\section{Defining Functions}
+
+For this set of exercises, you will re-write some of the course's previous exercises as functions. The code doing the actual computation will remain virtually the same, except it will be written in the context of a function and subsequently called. \textbf{ After you write each function, run it with 2-3 test cases to confirm that it works as expected!!}
+
+\begin{enumerate}
+
+	\item In Texas, you can be a member of the elite "top 1\%" if you make at least \$423,000 per year. Alternatively, in Hawaii, you can be a member once you start making at least \$279,000 per year! Finally, if you live in New York, you need to earn at least \$506,000 a year to make the cut. \\\\ Write a function to determine if a given salary is a "top-1\%" salary in Texas, Hawaii, and/or New York. Your function should take a single argument, the salary, and \emph{print} a sentence indicating in which state(s) this salary is and is not a top-1\% salary. Your function should not return a value.
+	
+	\item Write a function that returns a list of the powers (exponents 0-15, inclusive!!) for a provided number. This function should take 1 argument: the number to raise to powers 0-15.
+	
+	\item Modify the previous function to take two additional arguments indicating which exponents to calculate. For example, in the previous exercise, you would have provided the additional arguments 0 and 15 (or, 16, depending on how you wrote your loop). 
+	
+	\item Write a function to curve a list of grades, silly-professor style. This function should take \emph{four arguments}:
+	\begin{itemize}
+		\item A list of grades to curve
+		\item The cutoff \emph{above which} grades are reduced
+		\item The cutoff \emph{below which} grades are raised
+		\item The scaling value
+	\end{itemize}
+	The function should return a list of curved grades. 
+	
+	\item Write a function to compute the molecular weight of a protein sequence. This function should take a single argument, a protein-sequence string, and it should return a single value, the molecular weight. Your function should account for the potential presence of ambiguous amino acids (again, compute these weights from average of all weights). Once your function is written, run it on the protein sequence "ABVPOXIRBTQQWS." \\ Use this dictionary in your function:
+	\\ \code{ amino\_weights = \{"A":89.09, "R":174.20, "N":132.12, "D":133.10, "C":121.15, "Q":146.15, "E":147.13, "G":75.07, "H":155.16, "I":131.17, "L":131.17, "K":146.19, "M":149.21, "F":165.19, "P":115.13, "S":105.09, "T":119.12, "W":204.23, "Y":181.19, "V":117.15\}} 
+	
+	\item Write a function to open file and return the number of letter "f"\textquotesingle s in the file (both capital and lower-case!). 
+
+	\item Modify the previous function such that it contains an additional argument indicating which letter/character to count.
+	
+\end{enumerate}
+
+
 \section{Python modules}
 \begin{enumerate}
 	
@@ -45,30 +77,6 @@
 
 
 \end{enumerate}
-
-
-\section*{Bonus Question!}	
-	
-	For this question, you are going to save some useful information to a file. Specifically, you will create a \emph{CSV} (comma-separated values) file. This is basically what Excel files are - files with columns of data. The top row is the header, and each subsequent row contains data. Columns of data are separated by commas in csv files (note that there are other types of \emph{delimited} files, like tab-delimited files). 
-	\\\\ You will use the data from the file "dopamine\_sequences.fasta," which contains DNA sequences of vertebrate dopamine receptors published in \citet{SpielmanKumarWilke2015}. For convenience, the separate file "dopamine\_sequences\_dictionary.txt" contains a Python dictionary of these sequences; the keys are sequences IDs, and the values are the sequences. You can copy and paste the contents of "dopamine\_sequences\_dictionary.txt" into the Python script you\textquotesingle ll write for this question.
-	\\\\ Now, create a CSV file with two columns: the sequence ID and the sequence length. Follow this general strategy:
-	\begin{enumerate}[itemsep=2ex]
-		\item Collect all information to write to the output file (this has been done for you in the dictionary!)
-		\item Open the output file and write a header to the file (remember to add \code{"\textbackslash n"} for newlines!)
-		\item Write each line to the output file. In this case, you will need to loop over the dictionary and write each key:value pair in CSV format with a newline character, e.g. "sequenceID,length\textbackslash n"
-	\end{enumerate}
-	Once you have written the file, open it in a text editor to be sure that it is correct.
-	
-	Now, modify this code in the following ways:
-	\begin{enumerate}[itemsep=2ex]
-		
-		\item Modify your CSV-writing code such that it uses a function to write the CSV. This function should take three arguments: the header string, the dictionary to write, and the output file name. The function does not need to return anything.
-		
-		\item Modify your code and function so that you now write a file with three columns: sequence ID, sequence length, and percent of ambiguous nucleotides per DNA sequence. In this sequence, the character "N" is considered ambiguous (unlike A, C, G, T).
-		
-	\end{enumerate}
-
-	
 
 
 \bibliographystyle{plainnat}
