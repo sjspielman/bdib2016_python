@@ -86,38 +86,33 @@ For this set of exercises, you will re-write some of the course's previous exerc
 	\item Write a function to compute the molecular weight of a protein sequence. This function should take a single argument, a protein-sequence string, and it should return a single value, the molecular weight. Your function should account for the potential presence of ambiguous amino acids (again, compute these weights from average of all weights). Once your function is written, run it on the protein sequence "ABVPOXIRBTQQWS." \\ Use this dictionary in your function:
 	\\ \code{ amino\_weights = \{"A":89.09, "R":174.20, "N":132.12, "D":133.10, "C":121.15, "Q":146.15, "E":147.13, "G":75.07, "H":155.16, "I":131.17, "L":131.17, "K":146.19, "M":149.21, "F":165.19, "P":115.13, "S":105.09, "T":119.12, "W":204.23, "Y":181.19, "V":117.15\}} 
 	
-	\item Write a function to open file and return the number of letter "f"\textquotesingle s in the file (both capital and lower-case!). 
+	\item Write a function to open file and return the number of letter "f"\textquotesingle s (both capital and lower-case!), in a file whose name is provided as an argument. 
 
 	\item Modify the previous function such that it contains an additional argument indicating which letter/character to count.
 	
 \end{enumerate}
 
 
-\section{Python modules}
-\begin{enumerate}
-	
-	\item For this question, you will use the \code{os} module. In the included zip directory, there are 20 text files named file1.txt, file2.txt, file3.txt,..., file20.txt (below, they are referred to as file<1-20.txt> for convenience). For this question, use python to count the number of lines in each file. You will save all file line-counts to a \code{dictionary}, in which the keys are the file names and the values are the line counts. Once you have created the dictionary, print it to screen to make sure it looks correct.
-	\\ Hint: Use the \code{os} module function \code{os.listdir} to list all files in the current directory and loop over all of these files in order to count their lines. To ensure that you are only counting lines in these text files, use the \code{.startswith()} and \code{.endswith()} method (all files start with "file" and all files end with ".txt").
-
-	\item Create a new file called "file\_full.txt" which contains all contents from each file<1-20>.txt (in order). Again, use \code{os.listdir} to loop over these files. Once this file has been created, use the \code{shutil} module to \emph{move} the file to a different directory on your computer. After this script has run, navigate in your terminal (using the UNIX command \code{cd}) to this directory to confirm that "file\_full.txt" is indeed there.
-
-	\item  Write a \code{function} which counts the number of times a given letter occurs in a file. The function should take two arguments: the file name (including its path) and the letter to count. The function should return the number of occurrences for that letter. \\Hint: In this function, you should open the file, read it using the \code{.read()} method, and then use the \code{.count()} method to count the number of times the letter appears. Perform the following tasks with this function:
-	
-	\begin{itemize}
-		\item Run this function on all file<1-20.txt> to count the letter "a". For every file which contains more than 100 a's, use the \code{shutil} to \emph{make a copy of this file} called "lots\_fileX.txt". For example, if file10.txt contains more than 100 a's, you should create a second file called "lots\_file10.txt". 
-		\item Use the \code{sys} module (specifically the \code{sys.argv} variable) to capture \emph{two command-line arguments}: a file on which to run this function and the letter to count. Run the function using the given input parameters, and print a a sentence to the screen summarizing the results.
-		\item Modify your code from the previous point to use the \code{os} module function \code{os.path.exists()}. This function takes a single argument, a path to a file/directory, and returns True or False indicating if the file exists or not. So, before running the function on the command-line provided file, check if the file exists using \code{os.path.exists()}. If the file exists, then proceed as usual. If the file does not exist, print to screen "Your file does not exist!", and then exit immediately with \code{sys.exit()}.
-		\item Now, run the function \emph{from an entirely separate script}. Accomplish this by importing the file with this function into the script you will run. You can run the function on a file of your choice.
-	\end{itemize}
-
-
-\end{enumerate}
-
-
-\bibliographystyle{plainnat}
-\bibliography{citations}
-
-
+%\section{Python modules}
+%\begin{enumerate}
+%	
+%	\item For this question, you will use the \code{os} module. In the included zip directory, there are 20 text files named file1.txt, file2.txt, file3.txt,..., file20.txt (below, they are referred to as file<1-20.txt> for convenience). For this question, use python to count the number of lines in each file. You will save all file line-counts to a \code{dictionary}, in which the keys are the file names and the values are the line counts. Once you have created the dictionary, print it to screen to make sure it looks correct.
+%	\\ Hint: Use the \code{os} module function \code{os.listdir} to list all files in the current directory and loop over all of these files in order to count their lines. To ensure that you are only counting lines in these text files, use the \code{.startswith()} and \code{.endswith()} method (all files start with "file" and all files end with ".txt").
+%
+%	\item Create a new file called "file\_full.txt" which contains all contents from each file<1-20>.txt (in order). Again, use \code{os.listdir} to loop over these files. Once this file has been created, use the \code{shutil} module to \emph{move} the file to a different directory on your computer. After this script has run, navigate in your terminal (using the UNIX command \code{cd}) to this directory to confirm that "file\_full.txt" is indeed there.
+%
+%	\item  Write a \code{function} which counts the number of times a given letter occurs in a file. The function should take two arguments: the file name (including its path) and the letter to count. The function should return the number of occurrences for that letter. \\Hint: In this function, you should open the file, read it using the \code{.read()} method, and then use the \code{.count()} method to count the number of times the letter appears. Perform the following tasks with this function:
+%	
+%	\begin{itemize}
+%		\item Run this function on all file<1-20.txt> to count the letter "a". For every file which contains more than 100 a's, use the \code{shutil} to \emph{make a copy of this file} called "lots\_fileX.txt". For example, if file10.txt contains more than 100 a's, you should create a second file called "lots\_file10.txt". 
+%		\item Use the \code{sys} module (specifically the \code{sys.argv} variable) to capture \emph{two command-line arguments}: a file on which to run this function and the letter to count. Run the function using the given input parameters, and print a a sentence to the screen summarizing the results.
+%		\item Modify your code from the previous point to use the \code{os} module function \code{os.path.exists()}. This function takes a single argument, a path to a file/directory, and returns True or False indicating if the file exists or not. So, before running the function on the command-line provided file, check if the file exists using \code{os.path.exists()}. If the file exists, then proceed as usual. If the file does not exist, print to screen "Your file does not exist!", and then exit immediately with \code{sys.exit()}.
+%		\item Now, run the function \emph{from an entirely separate script}. Accomplish this by importing the file with this function into the script you will run. You can run the function on a file of your choice.
+%	\end{itemize}
+%
+%
+%\end{enumerate}
+%
 
 
 
